@@ -50,10 +50,8 @@ const HomeProduct = () => {
                 <p className='font-extrabold text-4xl my-10'>NEW ARRIVALS - Section 1</p>
                 <div className='flex flex-wrap justify-between gap-6 w-full'>
                     {productsToShowSection1.map(product => (
-                        <div key={product.id} className='w-[45%] xl:w-[22%] bg-[#F2F0F1] p-2 rounded-xl'>
-                            <Link to={`/product/${product.id}`}>
-                                <img className='w-full h-40 object-cover' src={tshirtImage} alt="T-Shirt" />
-                            </Link>
+                        <Link key={product.id} to={`/product/${product.id}`} className='w-[45%] xl:w-[22%] bg-[#F2F0F1] p-2 rounded-xl'>
+                            <img className='w-full h-40 object-cover' src={tshirtImage} alt="T-Shirt" />
                             <div className='mt-4 text1'>
                                 <p className='font-medium'>{product.name}</p>
                                 <div className='flex items-center gap-2 md:gap-4'>
@@ -61,7 +59,7 @@ const HomeProduct = () => {
                                         {productStars[product.id]?.map((isFilled, index) => (
                                             <div
                                                 key={index}
-                                                onClick={() => toggleStar(product.id, index)}
+                                                onClick={(e) => { e.stopPropagation(); toggleStar(product.id, index); }}
                                                 className='relative w-4 h-4 md:w-6 md:h-6 cursor-pointer'
                                             >
                                                 <svg
@@ -90,7 +88,7 @@ const HomeProduct = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
                 <div className='mt-6'>
@@ -111,10 +109,8 @@ const HomeProduct = () => {
                 <p className='font-extrabold text-4xl my-10'>NEW ARRIVALS - Section 2</p>
                 <div className='flex flex-wrap justify-between gap-6 w-full'>
                     {productsToShowSection2.map(product => (
-                        <div key={product.id} className='w-[45%] xl:w-[22%] bg-[#F2F0F1] p-2 rounded-xl'>
-                            <Link to={`/product/${product.id}`}>
-                                <img className='w-full h-40 object-cover' src={tshirtImage} alt="T-Shirt" />
-                            </Link>
+                        <Link key={product.id} to={`/product/${product.id}`} className='w-[45%] xl:w-[22%] bg-[#F2F0F1] p-2 rounded-xl'>
+                            <img className='w-full h-40 object-cover' src={tshirtImage} alt="T-Shirt" />
                             <div className='mt-4 text1'>
                                 <p className='font-medium'>{product.name}</p>
                                 <div className='flex items-center gap-2 md:gap-4'>
@@ -122,7 +118,7 @@ const HomeProduct = () => {
                                         {productStars[product.id]?.map((isFilled, index) => (
                                             <div
                                                 key={index}
-                                                onClick={() => toggleStar(product.id, index)}
+                                                onClick={(e) => { e.stopPropagation(); toggleStar(product.id, index); }}
                                                 className='relative w-4 h-4 md:w-6 md:h-6 cursor-pointer'
                                             >
                                                 <svg
@@ -151,7 +147,7 @@ const HomeProduct = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
                 <div className='mt-6'>
