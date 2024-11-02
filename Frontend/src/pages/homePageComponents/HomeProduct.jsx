@@ -10,7 +10,7 @@ const HomeProduct = () => {
     const [showAllSection2, setShowAllSection2] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch('https://blue-fox-1st-taxk-5lrp.vercel.app/api/products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data);
@@ -19,7 +19,7 @@ const HomeProduct = () => {
     }, []);
 
     const toggleStar = (productId, index) => {
-        fetch(`http://localhost:5000/api/products/${productId}/stars`, {
+        fetch(`https://blue-fox-1st-taxk-5lrp.vercel.app/api/products/${productId}/stars`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ starIndex: index })

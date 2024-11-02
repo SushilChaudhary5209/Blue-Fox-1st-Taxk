@@ -11,7 +11,7 @@ function DetailsBody() {
 
     useEffect(() => {
         // Fetch products from the backend
-        fetch('http://localhost:5000/api/products')
+        fetch('https://blue-fox-1st-taxk-5lrp.vercel.app/api/products')
             .then(response => response.json())
             .then(data => {
                 setProducts(data);

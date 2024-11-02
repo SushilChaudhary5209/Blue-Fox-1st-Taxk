@@ -12,7 +12,7 @@ const DetailProfile = () => {
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/products/${id}`)
+        fetch(`https://blue-fox-1st-taxk-5lrp.vercel.app/api/products/${id}`)
             .then(response => response.json())
             .then(data => setProduct(data))
             .catch(error => console.error('Error fetching product:', error));

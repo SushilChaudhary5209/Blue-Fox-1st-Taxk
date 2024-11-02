@@ -16,7 +16,7 @@ function RelatedProducts({ products }) {
     }, [products]);
 
     const toggleStar = (productId, index) => {
-        fetch(`http://localhost:5000/api/products/${productId}/stars`, {
+        fetch(`https://blue-fox-1st-taxk-5lrp.vercel.app/api/products/${productId}/stars`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ starIndex: index })
