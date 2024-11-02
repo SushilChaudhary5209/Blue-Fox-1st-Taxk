@@ -111,6 +111,11 @@ let products = [
     { id: 12, name: 'T-Shirt with Tape Details', price: 12, oldPrice: 232, discount: 20, stars: [false, false, false, false, false] },
 ];
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Product API. Use /api/products to get the list of products.');
+});
+
 // Get products
 app.get('/api/products', (req, res) => {
     res.json(products);
